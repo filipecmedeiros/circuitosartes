@@ -129,7 +129,7 @@
 			                <br/>
 			                <br/>
 			                <br/>
-		                	<a class="btn btn-default btn-lg">Cadastre-se já como artista!</a>
+		                	<a class="btn btn-default btn-lg" data-toggle="modal" data-target="#modal-artista">Cadastre-se já como artista!</a>
 		                </div>
 
 		                <div class="col-sm-6">
@@ -143,7 +143,7 @@
 			                	<li>Possibilidade de criar eventos diversificados.</li>
 			                </ul>
 			                <br/>
-		                	<a class="btn btn-default btn-lg">Cadastre já seu espaço!</a>
+		                	<a class="btn btn-default btn-lg" data-toggle="modal" data-target="#modal-espaco">Cadastre já seu espaço!</a>
 		                </div>	                
 		            </div>
 		        </div>
@@ -151,7 +151,81 @@
     <br/>
 	<img src="img/photo3.jpg" class="img-responsive">
     
-    <!-- Contact Section -->
+
+<!-- Modals -->
+	<div class="modal fade" id="modal-artista">
+		<div class="modal-dialog">
+		     <div class="modal-content" style="background: #000">
+		         <div class="modal-header">
+		             <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+		             <h4 class="modal-title" style="color: #FECB0B">Cadastro de artista</h4>
+		         </div>
+		         <div class="modal-body">
+		        	<form>
+			        	<div class="form-group">
+						    <label for="nome">Nome:</label>
+						    <input type="name" class="form-control" id="name">
+			        	</div>
+			        	<div class="form-group">
+						    <label for="genero">Gênero:</label>
+						    <select class="form-control" id="genero">
+							    <option> </option>
+							    <option>Masculino</option>
+							    <option>Feminino</option>
+							</select>
+			        	</div>
+			        	<div class="form-group">
+						    <label for="date">Data de nascimento:</label>
+						    <input type="date" class="form-control" id="date">
+			        	</div>
+			        	<div class="form-group">
+						    <label for="address">Endereço:</label>
+						    <input type="textarea" class="form-control" id="address">
+			        	</div>
+			        </form>
+		        	<button type="button" class="btn btn-default" data-dismiss="modal">Enviar</button>
+		        </div>
+		     </div>
+		</div>
+	</div>
+
+<div class="modal fade" id="modal-espaco">
+		<div class="modal-dialog">
+		     <div class="modal-content" style="background: #000">
+		         <div class="modal-header">
+		             <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+		             <h4 class="modal-title" style="color: #FECB0B">Cadastro de Espaço</h4>
+		         </div>
+		         <div class="modal-body">
+		        	<form>
+			        	<div class="form-group">
+						    <label for="nome">Nome:</label>
+						    <input type="name" class="form-control" id="name">
+			        	</div>
+			        	<div class="form-group">
+						    <label for="genero">Gênero:</label>
+						    <select class="form-control" id="genero">
+						    	<option> </option>
+							    <option>Masculino</option>
+							    <option>Feminino</option>
+							</select>
+			        	</div>
+			        	<div class="form-group">
+						    <label for="date">Data de nascimento:</label>
+						    <input type="date" class="form-control" id="date">
+			        	</div>
+			        	<div class="form-group">
+						    <label for="address">Endereço:</label>
+						    <input type="textarea" class="form-control" id="address">
+			        	</div>
+			        </form>
+		        	<button type="button" class="btn btn-default" data-dismiss="modal">Enviar</button>
+		        </div>
+		     </div>
+		</div>
+	</div>
+
+<!-- Contact Section -->
     <section id="contact" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
@@ -186,7 +260,15 @@
     <br/>
     <br/>
 
-
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+    	$(function(){
+         //código para exibir os modais
+    	});
+    </script>
+    
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.js"></script>
 
