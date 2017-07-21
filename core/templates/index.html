@@ -1,5 +1,7 @@
 {% load static %}
 
+{% load widget_tweaks %}
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -166,29 +168,21 @@
                      <h4 class="modal-title" style="color: #FECB0B">Cadastro de artista</h4>
                  </div>
                  <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="nome">Nome:</label>
-                            <input type="name" class="form-control" id="name">
-                        </div>
-                        <div class="form-group">
-                            <label for="genero">Gênero:</label>
-                            <select class="form-control" id="genero">
-                                <option> </option>
-                                <option>Masculino</option>
-                                <option>Feminino</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="date">Data de nascimento:</label>
-                            <input type="date" class="form-control" id="date">
-                        </div>
-                        <div class="form-group">
-                            <label for="address">Endereço:</label>
-                            <input type="textarea" class="form-control" id="address">
-                        </div>
+                    <form class="form-inline" action="" method="POST">
+                        {% csrf_token %}
+                        <fieldset>
+                            {% for field in artist_form %}
+                                <div class="{%if field.errors %} has-error {% endif %}">
+                                    <label for="{{ field.auto_id }}" class="col-md-3 control-label">{{ field.label }}</label>
+                                    {% render_field field class='form-control' %}
+                                    {% for error in field.errors %}
+                                        <span class="help-block">{{error}}</span>
+                                    {% endfor %}
+                                </div>
+                            {% endfor %}
+                            <button type="submit" class="btn btn-default">Enviar</button>
+                        </fieldset>
                     </form>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Enviar</button>
                 </div>
              </div>
         </div>
