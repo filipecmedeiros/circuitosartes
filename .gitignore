@@ -2,3 +2,5 @@
 /design/
 db.sqlite3
 circuitosartes/local_settings.py
+__pycache__
+*.pyc
